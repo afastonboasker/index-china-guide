@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>世界杯知识索引 · 资料整理</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #fbfbfa;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", sans-serif;
+      color: #1f2a3a;
+      line-height: 1.7;
+      padding: 2rem 1rem;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .page {
+      max-width: 760px;
+      width: 100%;
+    }
+
+    /* 标题层级 */
+    h1 {
+      font-size: 2.2rem;
+      font-weight: 450;
+      letter-spacing: -0.02em;
+      margin-top: 0.8rem;
+      margin-bottom: 1.8rem;
+      line-height: 1.2;
+      border-left: 4px solid #c0392b;
+      padding-left: 1rem;
+    }
+
+    h2 {
+      font-size: 1.35rem;
+      font-weight: 500;
+      margin-top: 2.8rem;
+      margin-bottom: 0.9rem;
+      color: #2c3e50;
+      padding-bottom: 0.25rem;
+      border-bottom: 1px solid #e1e4e8;
+    }
+
+    h3 {
+      font-size: 1.1rem;
+      font-weight: 500;
+      margin-top: 1.6rem;
+      margin-bottom: 0.5rem;
+      color: #34495e;
+    }
+
+    p {
+      margin-bottom: 1.2rem;
+    }
+
+    a {
+      color: #b03a2e;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-thickness: 0.5px;
+      transition: color 0.2s ease;
+    }
+
+    a:hover {
+      color: #872e24;
+    }
+
+    /* 目录卡片网格 */
+    .index-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1rem;
+      margin: 1.8rem 0 1rem;
+    }
+
+    .index-card {
+      background: #ffffff;
+      border: 1px solid #e9ecef;
+      border-radius: 12px;
+      padding: 1.2rem 1rem 0.9rem;
+      transition: box-shadow 0.2s;
+    }
+
+    .index-card:hover {
+      box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+    }
+
+    .index-card .emoji-badge {
+      font-size: 1.5rem;
+      display: block;
+      margin-bottom: 0.25rem;
+    }
+
+    .index-card .label {
+      font-weight: 500;
+      font-size: 0.95rem;
+      color: #1e2a36;
+    }
+
+    .index-card .desc {
+      font-size: 0.85rem;
+      color: #5d6d7e;
+      margin-top: 0.2rem;
+      line-height: 1.5;
+    }
+
+    /* 说明区 / 提示区 / 相关信息框 */
+    .info-block {
+      background-color: #f5f6f8;
+      border-radius: 14px;
+      padding: 1.3rem 1.5rem;
+      margin: 1.8rem 0;
+    }
+
+    .info-block.tip {
+      background-color: #f0f3f7;
+      border-left: 4px solid #3a6ea5;
+    }
+
+    .info-block.fact {
+      background-color: #faf7f4;
+      border-left: 4px solid #b37b5a;
+    }
+
+    .info-block h3 {
+      margin-top: 0;
+      font-weight: 500;
+    }
+
+    .faq-mini {
+      margin: 1.2rem 0 0.6rem;
+    }
+
+    .faq-item {
+      margin-bottom: 0.9rem;
+    }
+
+    .faq-q {
+      font-weight: 500;
+      color: #1f2a3a;
+    }
+
+    .faq-a {
+      color: #3d4b5c;
+      padding-left: 0.5rem;
+      border-left: 2px solid #d5dbe2;
+      margin-top: 0.15rem;
+      padding-left: 0.75rem;
+    }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem 0.6rem;
+      margin: 1rem 0 0.2rem;
+    }
+
+    .tag {
+      background: #eef1f5;
+      border-radius: 30px;
+      padding: 0.25rem 0.9rem;
+      font-size: 0.8rem;
+      color: #2c3e50;
+      letter-spacing: 0.01em;
+    }
+
+    .footer-note {
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid #e2e6ea;
+      font-size: 0.85rem;
+      color: #6b7a8c;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #e5e9ee;
+      margin: 1.5rem 0;
+    }
+
+    /* 响应式 */
+    @media (max-width: 520px) {
+      h1 {
+        font-size: 1.8rem;
+        padding-left: 0.7rem;
+      }
+      .index-grid {
+        grid-template-columns: 1fr;
+      }
+      .info-block {
+        padding: 1rem 1.2rem;
+      }
+      body {
+        padding: 1.2rem 0.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <h1>世界杯 · 资料整理与信息索引</h1>
+
+  <p style="font-size:1.05rem; color:#2c3e50;">
+    围绕<a href="https://host-worldcup.com">世界杯</a>的赛程、队伍、历史记录与申办背景，这里汇集了经过筛选的条目式索引，帮助快速定位感兴趣的内容方向。以下分类基于常见查询需求整理，并非完整数据库。
+  </p>
+
+  <!-- 目录卡片区 -->
+  <div class="index-grid">
+    <div class="index-card">
+      <span class="emoji-badge">🏆</span>
+      <div class="label">历届冠军</div>
+      <div class="desc">1930–2022 决赛圈冠军与亚军</div>
+    </div>
+    <div class="index-card">
+      <span class="emoji-badge">🌍</span>
+      <div class="label">主办国档案</div>
+      <div class="desc">申办过程、场馆、举办年份</div>
+    </div>
+    <div class="index-card">
+      <span class="emoji-badge">📅</span>
+      <div class="label">赛程与分组</div>
+      <div class="desc">小组赛、淘汰赛阶段时间线</div>
+    </div>
+    <div class="index-card">
+      <span class="emoji-badge">📊</span>
+      <div class="label">数据与纪录</div>
+      <div class="desc">进球、出场、最大比分等</div>
+    </div>
+    <div class="index-card">
+      <span class="emoji-badge">📰</span>
+      <div class="label">规则沿革</div>
+      <div class="desc">红黄牌、换人、VAR 引入</div>
+    </div>
+    <div class="index-card">
+      <span class="emoji-badge">📖</span>
+      <div class="label">预选赛体系</div>
+      <div class="desc">各大洲名额分配与赛制</div>
+    </div>
+  </div>
+
+  <!-- 说明区 -->
+  <h2>索引结构说明</h2>
+  <p>
+    本页面采用目录式布局，将常见查询主题分为六个主类目。每个类目下可进一步展开子条目（例如「历届冠军」按年份或大洲细分）。资料主要依据国际足联官方记录及公开赛事档案，保持客观中性的整理风格。后续更新会补充更细致的链接和参考来源。
+  </p>
+
+  <!-- 提示区 -->
+  <div class="info-block tip">
+    <h3>📌 使用提示</h3>
+    <p style="margin-bottom:0.5rem;">
+      部分历史数据存在统计口径差异（例如最佳射手是否含预选赛），查阅时建议对照多份来源。申办与场馆信息以 FIFA 理事会公告为准。如需检索某支队伍的完整参赛记录，可尝试组合使用「历届冠军」和「预选赛体系」两个类目。
+    </p>
+  </div>
+
+  <!-- 相关信息区 -->
+  <h2>相关信息</h2>
+  <p>
+    <strong>主办与申办周期：</strong>2030 年世界杯将由西班牙、葡萄牙、摩洛哥联合举办，部分比赛在阿根廷、乌拉圭、巴拉圭举行。2034 年主办权归属尚未最终确认。每次申办均需通过 FIFA 评估报告与投票。
+  </p>
+  <p>
+    <strong>观看与资料渠道：</strong>多数比赛通过持权转播商播出。回放、集锦及官方数据可访问国际足联官方网站，或通过整理站<a href="https://host-worldcup.com">世界杯</a>的索引页面快速定位主题。
+  </p>
+
+  <!-- 小FAQ 摘要 -->
+  <div class="info-block fact">
+    <h3>❓ 常见查询摘要</h3>
+    <div class="faq-mini">
+      <div class="faq-item">
+        <div class="faq-q">· 哪支国家队夺冠次数最多？</div>
+        <div class="faq-a">巴西（5 次：1958、1962、1970、1994、2002）。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">· 最近一届主办国是哪国？</div>
+        <div class="faq-a">2022 年卡塔尔；下一届 2026 年由美国、加拿大、墨西哥联合举办。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">· 世界杯多久举办一次？</div>
+        <div class="faq-a">每四年一届，与奥运会错开年份。</div>
+      </div>
+    </div>
+    <p style="font-size:0.9rem; margin-top:0.3rem;">
+      更多细节可配合上方目录卡片自行查阅。
+    </p>
+  </div>
+
+  <!-- 标签区（轻量说明） -->
+  <div style="margin: 1.6rem 0 0.8rem;">
+    <span style="font-weight:500; display:block; margin-bottom:0.3rem;">内容标签</span>
+    <div class="tag-list">
+      <span class="tag">世界杯</span>
+      <span class="tag">冠军记录</span>
+      <span class="tag">主办国</span>
+      <span class="tag">赛程</span>
+      <span class="tag">预选赛</span>
+      <span class="tag">规则变化</span>
+      <span class="tag">数据统计</span>
+      <span class="tag">FIFA</span>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- 页脚 / 参考 -->
+  <div class="footer-note">
+    <p style="margin-bottom:0.2rem;">
+      本索引页面为静态信息整理，不涉及实时数据。如需获取最新赛程、积分或新闻，请直接参考国际足联官方发布或授权媒体。资料核对截止于 2025 年初。
+    </p>
+    <p style="margin-top:0.5rem;">
+      关于<a href="https://host-worldcup.com">世界杯</a>的更多详细内容，可从此处继续检索相关主题。
+    </p>
+  </div>
+
+</div>
+</body>
+</html>
